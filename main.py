@@ -1,35 +1,27 @@
 from tkinter import *
 from tkinter import messagebox
+from random import *
+import pyperclip as py
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
-import random
+
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
-password = []
-nl = random.randint(8, 10)
-nn = random.randint(2, 4)
-ns = random.randint(2, 4)
+
+nl = randint(8, 10)
+nn = randint(2, 4)
+ns = randint(2, 4)
 def Generate_pass():
-    global password
-    for character in range(nl):
-        random_letter = random.choice(letters)
-        password += random_letter
+    pass_text.delete(0, END)
+    pass_letters = [choice(letters) for i in range(nl)]
+    pass_numbers = [choice(numbers) for i in range(nn)]
+    pass_sym = [choice(symbols) for i in range(ns)]
 
-    for character in range(nn):
-        random_number = random.choice(numbers)
-        password += random_number
-
-    for character in range(ns):
-        random_symbol = random.choice(symbols)
-        password += random_symbol
-
-    # print(password)   
-    random.shuffle(password)
-    # print(password)
-    new_password = ""
-    for char in password:
-        new_password += char
+    new_pass_list = pass_letters + pass_numbers + pass_sym
+    shuffle(new_pass_list)
+    new_password = "".join(new_pass_list)
+    py.copy(new_password)
     pass_text.insert(0, string=new_password)
 
 
