@@ -79,7 +79,8 @@ def save_pass():
 # ---------------------------- UI SETUP ------------------------------- #
 
 COLORS = "Black"
-filename = "/Users/Godgive Computer/PycharmProjects/day 29 projects/logo.png"
+# change the filename based on your cloning/forking path
+filename = "/Users/user/Downloads/PASSWORD-MANAGER-APP-WITHOUT-API/logo.png"
 window = Tk()
 window.title("Password Generator")
 window.config(padx=50, pady=50, bg=COLORS)
