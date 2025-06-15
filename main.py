@@ -80,7 +80,7 @@ def save_pass():
 
 COLORS = "Black"
 # change the filename based on your cloning/forking path
-filename = "./Day 30/password-manager-app-without-api/logo.png"
+filename = "./Day 30/password-manager-app-without-api/image/logo.png"
 window = Tk()
 window.title("Password Generator")
 window.config(padx=50, pady=50, bg=COLORS)
